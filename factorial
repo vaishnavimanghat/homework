@@ -1,0 +1,48 @@
+package helloworld;
+import java.util.Scanner;
+ 
+class factorial
+{
+   public static void main(String args[])
+   {
+      int n;
+      boolean run = false;
+      String runAgain;
+                 do
+                  {
+                      Scanner in = new Scanner(System.in);
+                      System.out.println("Enter an number");
+                      n= in.nextInt();
+                      System.out.println("your factorial is : "+ factorial_num(n));
+                      Scanner inn = new Scanner(System.in);
+                          System.out.println("Would you like to continue (yes/no)?");
+           
+                          runAgain = inn.nextLine();
+                          if(runAgain.equals("yes"))
+                          run = true;
+                   
+                          if(runAgain.equals("no"))
+                           {
+                          run = false;
+                          System.out.println("thank you");
+                            }
+                  } while (run == true);
+      }
+                
+                
+                
+                public static int factorial_num(int n)
+                {
+                	int c, fact = 1;
+                   
+             	
+             	         for ( c = 1 ; c <= n ; c++ )
+             	            fact = fact*c;
+             	 
+             	         return fact;
+             	      
+                
+ 
+                }
+          
+}
