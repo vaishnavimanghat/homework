@@ -1,0 +1,67 @@
+package registration;
+
+import java.util.Scanner;
+
+public class login extends registration
+{
+	public String uname="",pswrd="";
+	static boolean flag;
+	
+	  public void loging()
+	  {
+        Scanner inp=new Scanner(System.in);
+        System.out.println("login form");
+	    System.out.print("\n Enter username  \t:\t");
+	    uname=inp.next();
+	    System.out.print("\n Enter password \t:\t");
+	     pswrd=inp.next();
+	  }
+	      public void validate()
+	       {
+		     if(uname.equals(username)&&pswrd.equals(password))
+		       {
+		         System.out.println("your login is successful");
+		         flag=true;
+		       }
+		     else
+		       {
+			     System.out.println("your password or user name is incorrect\n pls enter the correct username and password");
+			     flag=false;
+		        }
+	       }
+	
+	
+	
+	public static void main(String args[])
+
+	{
+		String runAgain;
+		boolean run=false;
+		
+		login log=new login();
+		Scanner word=new Scanner(System.in);
+		do
+		{
+		log.register();
+		   do
+		    {
+		     log.loging();
+		     log.validate();
+		    }while(flag==false);
+		log.display();
+		System.out.println("Would you like to continue (yes/no)?");
+        
+        runAgain = word.nextLine();
+        if(runAgain.equals("yes"))
+        run = true;
+ 
+            if(runAgain.equals("no"))
+              {
+               run = false;
+               System.out.println("thank you");
+              }
+         } while (run == true);
+	
+
+      }
+}

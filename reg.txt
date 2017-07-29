@@ -1,0 +1,34 @@
+package registration;
+import java.util.Scanner;
+public class registration
+{
+	public String firstname,lastname,password,username;
+	int age;
+	
+	public void register()
+	{
+	Scanner ip=new Scanner(System.in);
+	System.out.print("\n\n Enter first name\t:\t");
+     firstname=ip.next();
+	System.out.print("\n Enter last  Name  \t:\t");
+	 lastname=ip.next();
+	System.out.println("\n enter age \t\t:\t");
+	 age=ip.nextInt();
+	System.out.print("\n Enter username  \t:\t");
+	 username=ip.next();
+	System.out.print("\n Enter password\t:\t");
+	 password=ip.next();
+	 System.out.println("\n your registration is successfully completed");
+    }
+	
+	public void display()
+	{
+	System.out.println("your details are:\n"+"\n first name.\t:\t"+firstname+
+	    "\n last Name   \t:\t"+lastname+"\n age\t\t:\t"+age+"\n username  \t:\t"+username+
+	    "\n paasword\t:\t"+password);
+	
+	
+	}
+
+	
+}
