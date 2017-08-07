@@ -1,0 +1,17 @@
+package threads;
+import java.util.Scanner;
+public class numbers extends Thread
+{
+	static int x,y;
+
+	Scanner sc = new Scanner(System.in);
+
+		public void run()
+		{
+			System.out.println("Enter the value of x and y: ");
+			x = sc.nextInt();
+			y = sc.nextInt();
+
+		}
+		
+}

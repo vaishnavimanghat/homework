@@ -1,0 +1,22 @@
+package threads;
+
+public class addition  extends numbers
+{
+	public void run() 
+	{
+		 int add= x + y;
+		 System.out.println("The additon of two numbers is = " + add);
+
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		numbers obj1 = new numbers();
+		addition obj2 = new addition();
+		obj1.start();
+		obj1.join();
+        obj2.start();
+	}
+
+}
+
+
