@@ -1,0 +1,72 @@
+package threads;
+
+public class min
+{ 
+	
+	     static int i;
+	public static void main(String[] args)
+	{
+		  // run in a second
+			
+		  final long timeInterval = 1000;
+		  Runnable runnable = new Runnable() 
+		  {
+		  
+		  public void run()
+		  {
+		    while (true) 
+		    {
+		      while(i!=301)
+		      {
+		    	// ------- code for task to run
+		      System.out.println("tik tik !!:"+i);
+		      // ------- ends here
+		     
+		      
+		      try 
+		      {
+		       Thread.sleep(timeInterval);
+		      } 
+		      catch (InterruptedException e)
+		      {
+		        e.printStackTrace();
+		      }
+		      
+		      if (i==60)//for one min
+		      {
+		    	 System.out.println("one minute over !!");
+		    	 
+		      }
+		      if (i==120)//for 2 min
+		      {
+		    	 System.out.println("two minutes over !!");
+		    	 
+		      }
+		      if (i==180)//for 3 min
+		      {
+		    	 System.out.println("three minutes over !!");
+		    	 
+		      }
+		      if (i==240)//for 4 min
+		      {
+		    	 System.out.println("four minutes over !!");
+		    	 
+		      }
+		      if (i==300)//for 5min
+		      {
+		    	 System.out.println("five minutes over !!");
+		    	 
+		      }
+		      
+		      
+		      i++;
+		      }
+		      }
+		    }
+		  };
+		  
+		  Thread thread = new Thread(runnable);
+		  thread.start();
+		  
+		  }
+		}
