@@ -1,0 +1,69 @@
+import java.io.*;
+	import java.util.Scanner;
+
+	
+public class STUDENT {
+        
+		public static void main(String[] args) throws IOException
+		{    
+			String name,ch;//declaration
+			int  age,n,regno;
+			int cfromfile;
+            char i;
+			Scanner sc = new Scanner(System.in);
+			File f=new File("student.txt");//creating file 
+			FileWriter fout = new FileWriter(f,true);		
+			BufferedWriter bout = new BufferedWriter(fout);
+			System.out.println(f.createNewFile());
+			
+            File f2=new File("counter.txt");//creating another file
+            System.out.println(f2.createNewFile());
+            FileReader in = null;
+             in = new FileReader("counter.txt");
+           //initially create a file called counter and store 0 into the file  
+            cfromfile = in.read();//reading from the counter file
+           	FileWriter write = null;
+	        write = new FileWriter("counter.txt");
+            i = (char)cfromfile;//initilization 
+			do
+			{
+				System.out.print("Enter No.of Students : ");			
+				n=sc.nextInt();
+				for(int j=0;j<n;j++)
+				{
+				  bout.newLine();
+					System.out.print("Enter Name : ");
+					name=sc.next();
+					System.out.print("Enter RegNo : ");
+					regno=sc.nextInt();
+					System.out.print("Enter Age : ");
+					age=sc.nextInt();
+					bout.write("Student "+i+" \n");
+					bout.newLine();
+					bout.write("\n Name\n : "+name);
+					bout.newLine();
+					bout.write("\n Reg No\n : "+regno);
+					bout.newLine();
+					bout.write("\nAge\n : "+age);
+					bout.newLine();
+					i++;
+				}
+					
+				
+				System.out.print("do you want to continue? (y/n) ");
+				ch=sc.next();
+			}while(ch.contentEquals("Y")||ch.contentEquals("y"));
+			System.out.println("thank you.data stored in file");
+		
+			cfromfile=i;
+			write.write(cfromfile);//writing into the file
+			
+			
+            write.close();
+	        sc.close();
+	        in.close();
+			bout.flush();
+			bout.close();
+			fout.close();
+		}
+	}
