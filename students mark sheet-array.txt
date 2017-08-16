@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class marks
+{
+    public static void main(String[] args)
+    { String ch;
+
+        do
+        {
+        int i,total=0,n,j=0;
+         boolean status=true; 
+            int[] sub = new int[60];
+            double avg;
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter No.of Subjects : ");            
+            n=sc.nextInt();
+            System.out.print("Enter Name : ");
+            String name=sc.next();
+               for(i=1;i<=n;i++,j++)
+                  {
+                      System.out.print("Enter the marks of subject"+i);
+                      sub[j]=sc.nextInt();
+                      total=total+sub[j];
+                  }
+                 avg=total/n;
+                 System.out.println("********MARK SHEET *********");
+                 System.out.print("\n NAME:\n "+name);
+                 System.out.print("\n TOTAL MARKS:\n "+total);
+                 System.out.print("\nAVERAGE:\n  "+avg);
+                 System.out.print("\nMARKS OBTAINED:\n");
+          for(j=0;j<n;j++)
+           {
+             System.out.println("\t"+sub[j]);//printing marks
+           }
+           for(j=0;j<n;j++)
+           {
+                 if(sub[j]<=40)
+                 { 
+                    status=false;
+                 }
+            }
+          
+           if(status==false)
+             {
+              System.out.println("STATUS:FAIL -WORK HARD ");
+             }
+           if(status==true)  
+             {
+        	  System.out.println("STATUS:PASS-CONGRATS");
+             }
+           System.out.print("\ndo you want to continue? (y/n) \n");
+                 ch=sc.next();
+           }while(ch.contentEquals("Y")||ch.contentEquals("y"));
+    System.out.println("THANK YOU.");
+ 
+    }
+}
