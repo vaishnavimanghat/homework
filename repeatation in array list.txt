@@ -1,0 +1,40 @@
+package array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+public class check 
+{
+ public static  void main(String[] args)
+ {  ArrayList<String> strings = new ArrayList<String>();
+    strings.add("stack");
+    strings.add("FLOW");
+    strings.add("stack");
+    strings.add("2");
+    strings.add("2");
+    strings.add("2");
+
+   
+	Map<String,Integer> counts = new HashMap<String,Integer>();
+
+	for (String str : strings) 
+	{
+	    if (counts.containsKey(str)) 
+	    {
+	        counts.put(str,counts.get(str) + 1);
+	    } 
+	    else 
+	    {
+	        counts.put(str, 1);
+	    }
+	}
+
+	for (Map.Entry<String, Integer> entry : counts.entrySet()) 
+	{ if(entry.getValue()>1)
+	{
+	    System.out.println(entry.getKey() + " = " + entry.getValue());
+	}
+	}
+ }
+	
+	
+}
